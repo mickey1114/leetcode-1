@@ -1,0 +1,32 @@
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+
+# Approach
+<!-- Describe your approach to solving the problem. -->
+
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+# Code
+```
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> indicies;
+        for(int i=0;i<nums.size();++i)
+           indicies[nums[i]]=i;
+
+           for(int i=0;i<nums.size();++i){
+               int left=target-nums[i];
+               if(indicies.count(left) &&  indicies[left]!=i){
+                return {i,indicies[left]};
+               }
+           }
+           return {};
+    }
+};
+```
